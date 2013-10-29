@@ -7,7 +7,7 @@ from itertools import islice
 
 hosturl = "***ASK BTF FOR TEST AUTH HOST URL***"
 authurl = "/auth/v1"
-merchantNum = "7805"
+merchantNum = "***ASK BTF FOR TEST AUTH HOST URL***"
 
 #ElementTree doesn't handle namespaces very well
 bt ='{http://api.bluetarp.com/ns/1.0}'
