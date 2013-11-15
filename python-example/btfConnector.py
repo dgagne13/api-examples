@@ -23,7 +23,6 @@ def getRequestResponseXML(requesturl):
 		raise
 
 def getAuthResponseXML(transactionXML):
-        print transactionXML
 	try:
 		#Check with BTF regarding port number
 		con = HTTPSConnection(BTF_HOST_NAME)
