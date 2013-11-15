@@ -37,25 +37,25 @@ for cust in customerList[:10]:
 
 print "Authorizing $100.00 sale for " + pName
 print "Using token " + token
-BtAuth.authorizeSale('727382f0-3fff-11e3-aa6e-0800200c9a66', cName, token, 
+BtAuth.authorizeSale('727382f0-3fff-11e3-aa6e-0800200c9a66', "Terminal 1", token, 
     100.00, "Invoice.1")	
 
 print " "
 print "Authorizing $10,000,000 sale for " + pName
 print "Using token " + token
-BtAuth.authorizeSale('727382f0-3fff-11e3-aa6e-0800200c9a66', cName, token, 
+BtAuth.authorizeSale('727382f0-3fff-11e3-aa6e-0800200c9a66', "Terminal 1", token, 
     10000000.00)
 
 print " "
 print "Authorizing $100.00 credit for " + pName
 print "Using token " + token
-BtAuth.authorizeCredit('727382f0-3fff-11e3-aa6e-0800200c9a66', cName, token, 
+BtAuth.authorizeCredit('727382f0-3fff-11e3-aa6e-0800200c9a66', "Terminal 1", token, 
     100.00, "Invoice.3", "credit-Example", "Invoice.1")	
 
 print " "
 print "Authorizing $100.00 hold for " + pName
 print "Using token " + token
-BtAuth.authorizeHold('727382f0-3fff-11e3-aa6e-0800200c9a66', cName, token,
+BtAuth.authorizeHold('727382f0-3fff-11e3-aa6e-0800200c9a66', "Terminal 1", token,
      100.00, "Invoice.4")
 
 print " "
@@ -73,7 +73,7 @@ holdToken = trans1.cust.purchasers.values()[0]
 print "Attempting to collect 90% of the first hold"
 print "Using token " + holdToken
 BtAuth.authorizeCollect("6b5ae470-4d53-11e3-8f96-0800200c9a66", 
-trans1.cust.name, holdToken, (0.9 * trans1.amount), trans1.authSeq,
+"Terminal 1", holdToken, (0.9 * trans1.amount), trans1.authSeq,
 "Invoice.5", "Collect-Example")
 
 print " "
@@ -90,5 +90,5 @@ voidToken = trans1.cust.purchasers.values()[0]
 
 print "Attempting to void auth " + trans1.authSeq
 print "Using token " + voidToken
-BtAuth.authorizeVoid("8848dd50-4d5a-11e3-8f96-0800200c9a66", trans1.cust.name,
+BtAuth.authorizeVoid("8848dd50-4d5a-11e3-8f96-0800200c9a66", "Terminal 1",
 trans1.authSeq, voidToken)
